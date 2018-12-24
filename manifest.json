@@ -1,0 +1,62 @@
+{
+  "manifest_version": 2,
+  "name": "Extractor",
+  "description": "HYUDBLAB_MENU_EXTRACTOR",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "<all_urls>"
+      ],
+      "js": [
+//        "module/jquery-3.2.0.min.js",
+//        "module/htmlparser.js",
+//        "module/html2json.js",
+        "module/webpage_menu_detection_based_on_dom.js",
+        "module/detecting_menu_in_rendered_web_document_using_machine_learning_techniques.js",
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": [
+//      "module/himalaya.js",
+//      "module/jquery-3.2.0.min.js",
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "downloads",
+    "alarms",
+    "http://developer.chrome.com/*",
+    "http://*/*",
+    "https://*/*",
+    "<all_urls>",
+    "*://*/*"
+  ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U",
+        "mac": "Alt+Shift+U"
+      }
+    },
+    "toggle-feature": {
+      "suggested_key": {
+        "default": "Alt+Shift+T",
+        "linux": "Ctrl+Shift+T"
+      },
+      "description": "Send a 'toggle-feature' event"
+    }
+  }
+}

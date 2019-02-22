@@ -3,8 +3,6 @@
 
 ## 설치 방법
 
-[개발자 모드]
-
 ```
 $ git clone https://github.com/meh9184/web-page-menu-extractor
 $ cd web-page-menu-extractor
